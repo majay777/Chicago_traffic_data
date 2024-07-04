@@ -1,0 +1,21 @@
+version: 2
+
+
+sources:
+  - name: traffic_crash
+    database: "traffic_crash_db"
+    schema: raw
+
+    tables:
+      - name: crashes
+        identifier: crashes
+
+      - name: fatalities
+        identifier: fatalities
+
+
+      - name: peoples
+        identifier: peoples
+
+      - name: vehicles
+        identifier: vehicles

@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: src_crashes
+    description: Crashes occurred and it's details.
+    columns:
+      - name: crash_record_id
+        description: id of the crash.
+        data_tests:
+          - unique
+          - not_null
+      - name: crash_date
+        description: Date on which crash occurred.
+
+
+  - name: src_fatalities
+    description: Fatalities occurred during the crashes.
+    columns:
+      - name: person_id
+        description: A unique number given to each person.
+        data_tests:
+          - unique
+
+      - name: crash_date
+        description: crash occurring date.
+
+  - name: src_peoples
+    description: Peoples injured/ died in crashes.
+    columns:
+      - name: person_id
+        data_tests:
+          - not_null
+          - unique
+      - name: person_type
+        description: Type of person like driver, pedestrian
+
+  - name: src_vehicles
+    description: Vehicles involved in crashes.
+    columns:
+      - name: crash_unit_id
+        data_tests:
+          - not_null
+
+      - name: crash_record_id
+        data_tests:
+          - not_null
+

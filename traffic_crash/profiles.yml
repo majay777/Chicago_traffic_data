@@ -1,0 +1,10 @@
+traffic_crash:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '../traffic_crash_db.duckdb'
+
+      extensions:
+        - httpfs
+        - parquet
