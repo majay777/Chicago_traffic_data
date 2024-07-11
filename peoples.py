@@ -1,4 +1,3 @@
-import json
 import dlt
 import requests
 
@@ -6,8 +5,8 @@ url = 'https://data.cityofchicago.org/resource/u6pd-qa9d.json'
 
 
 @dlt.resource(merge_key="person_id", write_disposition="merge")
-def stream_download_jsonl(Url):
-    response = requests.get(Url)
+def stream_download_jsonl(url1):
+    response = requests.get(url1)
     response.raise_for_status()  # Raise an HTTPError for bad responses
     yield response.json()
 

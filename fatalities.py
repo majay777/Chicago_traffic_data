@@ -1,13 +1,14 @@
 
 import dlt
 from dlt.sources.helpers import requests
+from streamlit_dynamic_filters import DynamicFilters
 
 url = 'https://data.cityofchicago.org/resource/gzaz-isa6.json'
 
 
 @dlt.resource()
-def stream_download_jsonl(Url):
-    response = requests.get(Url)
+def stream_download_jsonl(url1):
+    response = requests.get(url1)
     response.raise_for_status()  # Raise an HTTPError for bad responses
     yield response.json()
 

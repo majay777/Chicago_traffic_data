@@ -39,4 +39,4 @@ models:
       +materialized: table
 
     src:
-      +materialized: view
+      +materialized: table

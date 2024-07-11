@@ -6,8 +6,8 @@ url = 'https://data.cityofchicago.org/resource/85ca-t3if.json'
 
 
 @dlt.resource(merge_key="crash_record_id", write_disposition="merge")
-def stream_download_jsonl(Url):
-    response = requests.get(Url)
+def stream_download_jsonl(url1):
+    response = requests.get(url1)
     response.raise_for_status()  # Raise an HTTPError for bad responses
     yield response.json()
 

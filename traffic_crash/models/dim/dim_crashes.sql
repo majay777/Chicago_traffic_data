@@ -11,5 +11,6 @@ select crash_record_id, crash_date, posted_speed_limit,
        num_units,
        most_severe_injury, injuries_total, injuries_fatal, injuries_incapacitating,
        injuries_non_incapacitating, injuries_reported_not_evident, injuries_no_indication,
-       injuries_unknown, crash_hour, crash_day_of_week, crash_month, latitude, longitude,
+       injuries_unknown, crash_hour, crash_day_of_week, crash_month, latitude :: Numeric(11,9) as latitude,
+       longitude ::Numeric(11,9) as longitude,
        dooring_i, hit_and_run_i from crashes
