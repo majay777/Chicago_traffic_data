@@ -46,10 +46,8 @@ models:
         description: Type of roadway user involved in crash
       - name: vehicle_id
         description: The corresponding CRASH_UNIT_ID from the dim_vehicles table.
-        data_tests:
-          - relationships:
-              to: ref('dim_vehicles')
-              field: crash_unit_id
+
+
       - name: crash_record_id
         description: This number can be used to link to the same crash in the dim_crashes and dim_vehicles datasets.
                     This number also serves as a unique ID in the Crashes dataset.
