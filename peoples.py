@@ -1,7 +1,8 @@
 import dlt
 import requests
-
+import os
 url = 'https://data.cityofchicago.org/resource/u6pd-qa9d.json'
+DUCKDB_DATABASE = os.getenv("DUCKDB_DATABASE")
 
 
 @dlt.resource(merge_key="person_id", write_disposition="merge")
@@ -13,7 +14,7 @@ def stream_download_jsonl(url1):
 
 pipeline = dlt.pipeline(
     pipeline_name="traffic_crash_db",
-    destination=dlt.destinations.duckdb("traffic_crash_db.duckdb"),
+    destination=dlt.destinations.duckdb(DUCKDB_DATABASE),
     dataset_name="raw"
 )
 # The response contains a list of issues

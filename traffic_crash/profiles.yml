@@ -3,7 +3,7 @@ traffic_crash:
   outputs:
     dev:
       type: duckdb
-      path: '../traffic_crash_db.duckdb'
+      path: '../{{ env_var("DUCKDB_DATABASE") }}'
 
       extensions:
         - httpfs
